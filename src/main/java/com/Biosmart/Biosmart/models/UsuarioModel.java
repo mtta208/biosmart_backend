@@ -17,7 +17,7 @@ public class UsuarioModel {
     private String correo;
     private String telefono;
     private String cargo;
-    private String contraseña;
+    private String contrasena;
     private String rol;
 
 
@@ -73,12 +73,12 @@ public class UsuarioModel {
         this.cargo = cargo;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getRol() {

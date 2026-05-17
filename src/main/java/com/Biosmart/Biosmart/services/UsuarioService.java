@@ -23,6 +23,33 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
+    public UsuarioModel login(
+        String correo,
+        String contrasena
+) {
+
+    ArrayList<UsuarioModel> listaUsuarios =
+            (ArrayList<UsuarioModel>)
+                    usuarioRepository.findAll();
+
+    for (UsuarioModel usuario : listaUsuarios) {
+
+        if (
+                usuario.getCorreo() != null
+                &&
+                usuario.getContrasena() != null
+                &&
+                usuario.getCorreo().equals(correo)
+                &&
+                usuario.getContrasena().equals(contrasena)
+        ) {
+
+            return usuario;
+        }
+    }
+
+    return null;
+}
     public Optional<UsuarioModel> obtenerPorId(Long id) {
         return usuarioRepository.findById(id);
     }

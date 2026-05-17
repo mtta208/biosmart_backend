@@ -27,6 +27,13 @@ public class UsuarioController {
         return this.usuarioService.guardarUsuario(usuario);
     }
 
+    @PostMapping("/login")
+    public UsuarioModel login(@RequestBody UsuarioModel usuario) {
+                UsuarioModel usuarioEncontrado =
+                usuarioService.login(
+                        usuario.getCorreo(),
+                        usuario.getContrasena() );return usuarioEncontrado;}
+
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id) {
         return this.usuarioService.obtenerPorId(id);
