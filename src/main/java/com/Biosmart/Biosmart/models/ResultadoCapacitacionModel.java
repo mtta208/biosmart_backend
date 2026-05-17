@@ -2,6 +2,7 @@ package com.Biosmart.Biosmart.models;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "resultado_capacitacion")

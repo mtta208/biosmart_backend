@@ -2,6 +2,7 @@ package com.Biosmart.Biosmart.models;
 
 import jakarta.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "capacitacion")
@@ -17,6 +18,8 @@ public class CapacitacionModel {
 
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    @OneToMany(mappedBy = "capacitacion")
+    private List<ResultadoCapacitacionModel> resultados;
 
     @ManyToOne
     @JoinColumn(name = "id_equipo")

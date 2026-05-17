@@ -1,6 +1,7 @@
 package com.Biosmart.Biosmart.models;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -18,6 +19,11 @@ public class UsuarioModel {
     private String cargo;
     private String contraseña;
     private String rol;
+
+
+    // RELACION
+    @OneToMany(mappedBy = "usuario")
+    private List<ResultadoCapacitacionModel> resultados;
 
     public Long getId_usuario() {
         return id_usuario;

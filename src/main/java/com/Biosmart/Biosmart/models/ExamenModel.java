@@ -1,6 +1,7 @@
 package com.Biosmart.Biosmart.models;
 
 import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "examen")
